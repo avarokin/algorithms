@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: algorithms-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: algorithms-app
+  template:
+    metadata:
+      labels:
+        app: algorithms-app
+    spec:
+      containers:
+        - name: algorithms-app
+          image: algorithms-app:latest
+          ports:
+            - containerPort: 3000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: algorithms-app-service
+spec:
+  selector:
+    app: algorithms-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: LoadBalancer

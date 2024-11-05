@@ -1,8 +1,3 @@
-/* SearchBar.css */
-.search-bar {
-    width: 100%;
-}
-
 /* Light mode styles */
 .search-bar.light-mode {
     background-color: white; /* Background color for light mode */

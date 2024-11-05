@@ -1,29 +1,45 @@
 import React, {SyntheticEvent, useState} from 'react';
 import { TextField, Autocomplete } from '@mui/material';
 import './SearchBar.css';
+import {useNavigate} from "react-router-dom";
 
-const options = ["Algorithm 1", "Algorithm 2", "Binary Search", "Bubble Sort", "Merge Sort"];
+interface Option {
+    label: string;
+    path: string;
+}
+
+const options: Option[] = [
+
+    { label: "Bubble Sort", path: "/bubble-sort" },
+    { label: "Insertion Sort", path: "/insertion-sort" },
+
+];
 
 export default function SearchBar({ isDarkMode }: { isDarkMode: boolean }) {
     const [inputValue, setInputValue] = useState('');
-    const [selectedValue, setSelectedValue] = useState<string | null>(null);
+    const [selectedValue, setSelectedValue] = useState<Option | null>(null); // Change type to Option | null
+    const navigate = useNavigate(); // Initialize useNavigate
 
     const handleInputChange = (_event: SyntheticEvent, value: string) => {
         setInputValue(value);
     };
 
-    const handleChange = (_event: SyntheticEvent, newValue: string | null) => {
+    const handleChange = (_event: SyntheticEvent, newValue: Option | null) => { // Change type to Option | null
         setSelectedValue(newValue);
+        if (newValue) {
+            navigate(newValue.path); // Navigate to the selected path
+        }
     };
 
     return (
         <div className={`search-bar ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
             <Autocomplete
-                value={selectedValue}
+                value={selectedValue} // Pass the selected object
                 onChange={handleChange}
                 inputValue={inputValue}
                 onInputChange={handleInputChange}
                 options={options}
+                getOptionLabel={(option) => option.label}
                 renderInput={(params) => (
                     <TextField
                         {...params}
@@ -34,5 +50,4 @@ export default function SearchBar({ isDarkMode }: { isDarkMode: boolean }) {
             />
         </div>
     );
-
 }

@@ -18,7 +18,7 @@ function App() {
                     <Routes>
                         <Route path="/bubble-sort" element={<BubbleSort />} />
                         <Route path="/insertion-sort" element={<InsertionSort />} />
-                        {/* Add routes for other algorithms here */}
+
                         {/* Optionally add a default route or 404 page */}
                     </Routes>
                 </div>

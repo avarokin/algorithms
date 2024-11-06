@@ -1,51 +1,51 @@
 /* Light mode styles */
 .search-bar.light-mode {
-    background-color: white; /* Background color for light mode */
+    background-color: white;
     border-radius: 4px;
 }
 
 .search-bar.light-mode input {
-    color: black; /* Text color for light mode */
+    color: black;
 }
 
 .search-bar.light-mode .MuiInputLabel-root {
-    color: grey; /* Label color for light mode */
+    color: grey;
 }
 
 .search-bar.light-mode .MuiOutlinedInput-root {
-    border-color: rgba(0, 0, 0, 0.5); /* Border color for light mode */
+    border-color: rgba(0, 0, 0, 0.5);
 }
 
 .search-bar.light-mode .MuiOutlinedInput-root:hover fieldset {
-    border-color: rgba(0, 0, 0, 0.7); /* Border color on hover for light mode */
+    border-color: rgba(0, 0, 0, 0.7);
 }
 
 .search-bar.light-mode .MuiOutlinedInput-root.Mui-focused fieldset {
-    border-color: #000000; /* Border color when focused for light mode */
+    border-color: #000000;
 }
 
 /* Dark mode styles */
 .search-bar.dark-mode {
-    background-color: #121212; /* Background color for dark mode */
+    background-color: #121212;
     border-radius: 4px;
 }
 
 .search-bar.dark-mode input {
-    color: white; /* Text color for dark mode */
+    color: white;
 }
 
 .search-bar.dark-mode .MuiInputLabel-root {
-    color: white; /* Label color for dark mode */
+    color: white;
 }
 
 .search-bar.dark-mode .MuiOutlinedInput-root {
-    border-color: #90caf9; /* Border color for dark mode */
+    border-color: #90caf9;
 }
 
 .search-bar.dark-mode .MuiOutlinedInput-root:hover fieldset {
-    border-color: #ffffff; /* Border color on hover in dark mode */
+    border-color: #ffffff;
 }
 
 .search-bar.dark-mode .MuiOutlinedInput-root.Mui-focused fieldset {
-    border-color: #90caf9; /* Border color when focused in dark mode */
+    border-color: #90caf9;
 }

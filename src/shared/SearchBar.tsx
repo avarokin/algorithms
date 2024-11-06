@@ -17,24 +17,24 @@ const options: Option[] = [
 
 export default function SearchBar({ isDarkMode }: { isDarkMode: boolean }) {
     const [inputValue, setInputValue] = useState('');
-    const [selectedValue, setSelectedValue] = useState<Option | null>(null); // Change type to Option | null
-    const navigate = useNavigate(); // Initialize useNavigate
+    const [selectedValue, setSelectedValue] = useState<Option | null>(null);
+    const navigate = useNavigate();
 
     const handleInputChange = (_event: SyntheticEvent, value: string) => {
         setInputValue(value);
     };
 
-    const handleChange = (_event: SyntheticEvent, newValue: Option | null) => { // Change type to Option | null
+    const handleChange = (_event: SyntheticEvent, newValue: Option | null) => {
         setSelectedValue(newValue);
         if (newValue) {
-            navigate(newValue.path); // Navigate to the selected path
+            navigate(newValue.path);
         }
     };
 
     return (
         <div className={`search-bar ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
             <Autocomplete
-                value={selectedValue} // Pass the selected object
+                value={selectedValue}
                 onChange={handleChange}
                 inputValue={inputValue}
                 onInputChange={handleInputChange}
